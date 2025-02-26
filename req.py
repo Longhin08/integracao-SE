@@ -13,8 +13,6 @@ with open("teste.pdf", "rb") as file:
 
 auth = os.getenv("TOKEN_JWT")
 
-print(auth)
-
 # URL da sua API (substitua pela URL correta)
 url = "https://mackenzie-test.softexpert.com/apigateway/se/ws/dc_ws.php"
 
@@ -52,7 +50,7 @@ xml_body = f"""
 # Realizando a requisição POST com o XML
 response = requests.post(url, headers=headers, data=xml_body)
 
-xml_response = response.text  # Supondo que a resposta da API está aqui
+xml_response = response.text  # Supondo que a resposta da API está aqu
 
 # Extrai o conteúdo dentro da tag <return>
 inicio = xml_response.find("<return>") + len("<return>")
