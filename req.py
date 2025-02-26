@@ -1,30 +1,47 @@
-import base64
-import zeep
+import requests
 
-# Configuração
-WSDL_URL = "https://mackenzie-test.softexpert.com/se/ws/dc_ws.php?wsdl"
-client = zeep.Client(wsdl=WSDL_URL)
+# URL da sua API (substitua pela URL correta)
+url = "https://mackenzie-test.softexpert.com/apigateway/se/ws/dc_ws.php"
 
-# Leitura do arquivo e conversão para Base64
-with open("relatorio.pdf", "rb") as file:  # Aqui o nome do arquivo precisa estar entre aspas
-    encoded_file = base64.b64encode(file.read()).decode("utf-8")
-
-# Montando a requisição
-document_data = {
-    "idcategory": 123,
-    "title": "Relatório Financeiro",
-    "dsresume": "Resumo do relatório",
-    "dtdocument": "2025-02-26",
-    "attributes": "campo1=valor1;campo2=valor2;",
-    "iduser": 456,
-    "file": [{
-        "name": "relatorio.pdf",  # Tente "name" ao invés de "NMFILE"
-        "data": encoded_file,      # Tente "data" ao invés de "BINFILE"
-    }]
+# Headers da requisição (ajuste conforme necessário)
+headers = {
+    "Content-Type": "text/xml;charset=UTF-8",
+    "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA1Nzc3OTIsImV4cCI6MTg5ODM0NDE5MiwiaWRsb2dpbiI6Im9wdGltaXplIn0.C2kZ5hFLVJSxungMKnVWVcL7oOSreClc7ZGM9GHMTHs"  # se necessário
 }
 
-# Chamando o serviço
-response = client.service.newDocument(**document_data)
+# Corpo da requisição em XML
+xml_body = """
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:document">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <urn:newDocument>
+            <urn:idcategory>Dossiê do Curso</urn:idcategory>
+            <urn:iddocument>1234teste py</urn:iddocument>
+            <urn:title>TÍTULO_DO_DOCUMENTO</urn:title>
+            <urn:dsresume>RESUMO_DO_DOCUMENTO</urn:dsresume>
+            <urn:iduser></urn:iduser>
+            <urn:fgmodel></urn:fgmodel>
+        </urn:newDocument>
+    </soapenv:Body>
+    </soapenv:Envelope>
 
-# Exibindo a resposta
-print(response)
+"""
+
+# Realizando a requisição POST com o XML
+response = requests.post(url, headers=headers, data=xml_body)
+
+xml_response = response.text  # Supondo que a resposta da API está aqui
+
+# Extrai o conteúdo dentro da tag <return>
+inicio = xml_response.find("<return>") + len("<return>")
+fim = xml_response.find("</return>")
+
+if inicio != -1 and fim != -1:
+    conteudo = xml_response[inicio:fim].strip()
+
+try:
+    data = response.json()
+    print("Resposta JSON:", data)
+except requests.exceptions.JSONDecodeError:
+    print("resposta:", conteudo)
+
