@@ -27,7 +27,6 @@ def monitorar_pasta(diretorio):
                     arquivos_processados.add(caminho_arquivo)
                     logging.info(f"Novo arquivo encontrado: {arquivo}")
                     processar_arquivo(caminho_arquivo)
-        time.sleep(2) 
 
 # Função para processar o arquivo
 def processar_arquivo(caminho_arquivo):
