@@ -5,11 +5,7 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-# Leitura e codificação em Base64 do arquivo
-with open("teste.pdf", "rb") as file:
-    arquivo_bytes = file.read()
-    base64_bytes = base64.b64encode(arquivo_bytes)
-    base64_string = base64_bytes.decode("utf-8")
+
 
 auth = os.getenv("TOKEN_JWT")
 
@@ -25,26 +21,15 @@ headers = {
 # Corpo da requisição em XML
 xml_body = f"""
     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:document">
-    <soapenv:Header/>
-    <soapenv:Body>
-        <urn:newDocument>
-            <urn:idcategory>naoIndex</urn:idcategory>
-            <urn:iddocument>teste com arquiv1q1231231weqwe23</urn:iddocument>
-            <urn:title>TÍTULO_DO_DOCUMEqweNTO</urn:title>
-            <urn:dsresume>RESUMO_DO_DOCUMENTO</urn:dsresume>
-            <urn:iduser></urn:iduser>
-            <urn:attributes>caixa=123456;etiqueta=123123</urn:attributes>
-            <urn:fgmodel></urn:fgmodel>
-            <urn:file>
-                <urn:item>
-                    <urn:NMFILE>testeqweq11231231231we123.pdf</urn:NMFILE>
-                    <urn:BINFILE>{base64_string}12qwe3</urn:BINFILE>
-                    <urn:CONTAINER>?</urn:CONTAINER>
-                    <urn:ERROR>?</urn:ERROR>
-                </urn:item>
-            </urn:file>
-        </urn:newDocument>
-    </soapenv:Body>
+        <soapenv:Header/>
+        <soapenv:Body>
+            <urn:viewDocumentData>
+                <urn:iddocument>123</urn:iddocument>
+                <urn:idrevision></urn:idrevision>
+                <urn:iduser></urn:iduser>
+                <urn:idcategory>naoIndex</urn:idcategory>
+            </urn:viewDocumentData>
+        </soapenv:Body>
     </soapenv:Envelope>
 """
 
