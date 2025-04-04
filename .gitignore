@@ -1,5 +1,5 @@
 .env
-
+monitor.log
 
 *.pyc
 __pycache__/
