@@ -29,23 +29,17 @@ xml_body = f"""
     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:document">
     <soapenv:Header/>
     <soapenv:Body>
-        <urn:newDocument>
+        <urn:downloadEletronicFile>
+            <!--You may enter the following 8 items in any order-->
+            <urn:iddocument>12312313000001</urn:iddocument>
+            <urn:idrevision>0</urn:idrevision>
+            <urn:iduser>?</urn:iduser>
+            <urn:fgconverttopdf>?</urn:fgconverttopdf>
             <urn:idcategory>naoIndex</urn:idcategory>
-            <urn:iddocument>{file_name}</urn:iddocument>
-            <urn:title>{file_name}</urn:title>
-            <urn:dsresume>Documento enviado automaticamente</urn:dsresume>
-            <urn:iduser></urn:iduser>
-            <urn:attributes>caixa=123123;</urn:attributes>
-            <urn:fgmodel></urn:fgmodel>
-            <urn:file>
-                <urn:item>
-                    <urn:NMFILE>{file_name}.pdf</urn:NMFILE>
-                    <urn:BINFILE>{base64_string}</urn:BINFILE>
-                    <urn:CONTAINER>?</urn:CONTAINER>
-                    <urn:ERROR>?</urn:ERROR>
-                </urn:item>
-            </urn:file>
-        </urn:newDocument>
+            <urn:fgwatermark>?</urn:fgwatermark>
+            <urn:nmfile>Mackenzie - Proposta Atualizada - Assinada.pdf</urn:nmfile>  
+            <urn:fgfilelink>?</urn:fgfilelink>
+        </urn:downloadEletronicFile>
     </soapenv:Body>
     </soapenv:Envelope>
 """
