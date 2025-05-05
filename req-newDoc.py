@@ -31,7 +31,7 @@ xml_body = f"""
     <soapenv:Body>
         <urn:newDocument>
             <urn:idcategory>naoIndex</urn:idcategory>
-            <urn:iddocument>testebase664</urn:iddocument>
+            <urn:iddocument>testeinte</urn:iddocument>
             <urn:title>{file_name}base64</urn:title>
             <urn:dsresume>Documento enviado automaticamente</urn:dsresume>
             <urn:iduser></urn:iduser>
@@ -39,7 +39,7 @@ xml_body = f"""
             <urn:fgmodel></urn:fgmodel>
             <urn:file>
                 <urn:item>
-                    <urn:NMFILE>testebase664.pdf</urn:NMFILE>
+                    <urn:NMFILE>testeinte.pdf</urn:NMFILE>
                     <urn:BINFILE>{base64_string}base64</urn:BINFILE>
                     <urn:CONTAINER>?</urn:CONTAINER>
                     <urn:ERROR>?</urn:ERROR>

@@ -53,4 +53,4 @@ if response.status_code == 200:
     xml_response = response.text  # Supondo que a resposta da API está aqui
     print("Resposta da API:", xml_response)
 else:
-    print(f"Erro ao enviar a requisição. Código de status: {response.text}")
+    print(f"Erro ao enviar a requisição. Código de status: {response}")

@@ -39,11 +39,11 @@ xml_body = f"""
                </urn:TableField>
                <urn:TableField>
                   <urn:TableFieldID>nmfile</urn:TableFieldID>
-                  <urn:TableFieldValue>testebase664</urn:TableFieldValue>
+                  <urn:TableFieldValue>testeinte.pdf</urn:TableFieldValue>
                </urn:TableField>
                <urn:TableField>
                   <urn:TableFieldID>guid</urn:TableFieldID>
-                  <urn:TableFieldValue>testebase664</urn:TableFieldValue>
+                  <urn:TableFieldValue>testeinte</urn:TableFieldValue>
                </urn:TableField>
             </urn:TableFieldList>
         </urn:newTableRecord>
