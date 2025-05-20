@@ -26,7 +26,7 @@ Este projeto tem como objetivo facilitar a integração com sistemas externos po
    
    ```bash
    python req-base64.py
-  ```
+
 
 ## 📝 Observações
 
