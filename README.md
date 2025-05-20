@@ -22,11 +22,15 @@ Este projeto tem como objetivo facilitar a integração com sistemas externos po
    git clone https://github.com/Longhin08/integracao-SE.git
    cd integracao-SE
     ```
+2. Instale as dependências:
+
+    ```bash
+    pip install -r requirements.txt
+
 3. Execute o script desejado:
    
    ```bash
    python req-base64.py
-  ```
 
 ## 📝 Observações
 
