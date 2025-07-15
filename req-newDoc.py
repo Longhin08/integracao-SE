@@ -31,15 +31,23 @@ xml_body = f"""
     <soapenv:Body>
         <urn:newDocument>
             <urn:idcategory>naoIndex</urn:idcategory>
+<<<<<<< HEAD
             <urn:iddocument>testeinte123</urn:iddocument>
+=======
+            <urn:iddocument>testei1232</urn:iddocument>
+>>>>>>> 528feb199621fd7ef369f60ca3846b298a723268
             <urn:title>{file_name}base64</urn:title>
             <urn:dsresume>Documento enviado automaticamente</urn:dsresume>
             <urn:iduser></urn:iduser>
-            <urn:attributes>caixa=123123</urn:attributes>
+            <urn:attributes>caixa=123123;etiqueta=1232;tpdocumento=13213;numpagina=12312</urn:attributes>
             <urn:fgmodel></urn:fgmodel>
             <urn:file>
                 <urn:item>
+<<<<<<< HEAD
                     <urn:NMFILE>testeinte123.pdf</urn:NMFILE>
+=======
+                    <urn:NMFILE>testei1232.pdf</urn:NMFILE>
+>>>>>>> 528feb199621fd7ef369f60ca3846b298a723268
                     <urn:BINFILE>{base64_string}base64</urn:BINFILE>
                     <urn:CONTAINER>?</urn:CONTAINER>
                     <urn:ERROR>?</urn:ERROR>
