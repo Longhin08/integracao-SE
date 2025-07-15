@@ -31,7 +31,7 @@ xml_body = f"""
     <soapenv:Body>
         <urn:downloadEletronicFile>
             <!--You may enter the following 8 items in any order-->
-            <urn:iddocument>12312313000001</urn:iddocument>
+            <urn:iddocument>testeinte123</urn:iddocument>
             <urn:idrevision>0</urn:idrevision>
             <urn:iduser>?</urn:iduser>
             <urn:fgconverttopdf>?</urn:fgconverttopdf>

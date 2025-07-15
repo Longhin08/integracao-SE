@@ -10,7 +10,7 @@ load_dotenv()
 with open("teste.pdf", "rb") as file:
     arquivo_bytes = file.read()
     base64_bytes = base64.b64encode(arquivo_bytes)
-    file_name = "123"
+    file_name = "testeinte"
     base64_string = base64_bytes.decode("utf-8")
  
 # URL da sua API (substitua pela URL correta)
@@ -31,7 +31,7 @@ xml_body = f"""
     <soapenv:Body>
         <urn:newDocument>
             <urn:idcategory>naoIndex</urn:idcategory>
-            <urn:iddocument>testeinte</urn:iddocument>
+            <urn:iddocument>testeinte123</urn:iddocument>
             <urn:title>{file_name}base64</urn:title>
             <urn:dsresume>Documento enviado automaticamente</urn:dsresume>
             <urn:iduser></urn:iduser>
@@ -39,7 +39,7 @@ xml_body = f"""
             <urn:fgmodel></urn:fgmodel>
             <urn:file>
                 <urn:item>
-                    <urn:NMFILE>testeinte.pdf</urn:NMFILE>
+                    <urn:NMFILE>testeinte123.pdf</urn:NMFILE>
                     <urn:BINFILE>{base64_string}base64</urn:BINFILE>
                     <urn:CONTAINER>?</urn:CONTAINER>
                     <urn:ERROR>?</urn:ERROR>
