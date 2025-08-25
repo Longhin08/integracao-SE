@@ -26,22 +26,22 @@ headers = {
  
 # Corpo da requisição em XML
 xml_body = f"""
-    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:document">
-    <soapenv:Header/>
-    <soapenv:Body>
-        <urn:downloadEletronicFile>
-            <!--You may enter the following 8 items in any order-->
-            <urn:iddocument>testeinte123</urn:iddocument>
-            <urn:idrevision>0</urn:idrevision>
-            <urn:iduser>?</urn:iduser>
-            <urn:fgconverttopdf>?</urn:fgconverttopdf>
-            <urn:idcategory>naoIndex</urn:idcategory>
-            <urn:fgwatermark>?</urn:fgwatermark>
-            <urn:nmfile>Mackenzie - Proposta Atualizada - Assinada.pdf</urn:nmfile>  
-            <urn:fgfilelink>?</urn:fgfilelink>
-        </urn:downloadEletronicFile>
-    </soapenv:Body>
-    </soapenv:Envelope>
+        <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:document">
+        <soapenv:Header/>
+        <soapenv:Body>
+            <urn:downloadEletronicFile>
+                <!--You may enter the following 8 items in any order-->
+                <urn:iddocument>000019fee8474b5385e6a9e8675eba5f-001</urn:iddocument>
+                <urn:idrevision></urn:idrevision>
+                <urn:iduser></urn:iduser>
+                <urn:fgconverttopdf></urn:fgconverttopdf>
+                <urn:idcategory></urn:idcategory>
+                <urn:fgwatermark></urn:fgwatermark>
+                <urn:nmfile></urn:nmfile>
+                <urn:fgfilelink></urn:fgfilelink>
+            </urn:downloadEletronicFile>
+        </soapenv:Body>
+        </soapenv:Envelope>
 """
  
  
@@ -53,4 +53,4 @@ if response.status_code == 200:
     xml_response = response.text  # Supondo que a resposta da API está aqui
     print("Resposta da API:", xml_response)
 else:
-    print(f"Erro ao enviar a requisição. Código de status: {response}")
+    print(f"Erro ao enviar a requisição. Código de status: {response.text}")

@@ -32,7 +32,6 @@ xml_body = f"""
         <urn:newDocument>
             <urn:idcategory>naoIndex</urn:idcategory>
             <urn:iddocument>testeinte123</urn:iddocument>
-=======
             <urn:iddocument>testei1232</urn:iddocument>
             <urn:title>{file_name}base64</urn:title>
             <urn:dsresume>Documento enviado automaticamente</urn:dsresume>
