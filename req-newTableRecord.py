@@ -14,7 +14,7 @@ with open("teste.pdf", "rb") as file:
     base64_string = base64_bytes.decode("utf-8")
  
 # URL da sua API (substitua pela URL correta)
-url = os.getenv("DOMAIN")
+url = os.getenv("DOMAIN-FM")
 auth = os.getenv("TOKEN_JWT")
  
  
@@ -39,19 +39,11 @@ xml_body = f"""
                </urn:TableField>
                <urn:TableField>
                   <urn:TableFieldID>nmfile</urn:TableFieldID>
-<<<<<<< HEAD
                   <urn:TableFieldValue>testeinte123.pdf</urn:TableFieldValue>
                </urn:TableField>
                <urn:TableField>
                   <urn:TableFieldID>guid</urn:TableFieldID>
                   <urn:TableFieldValue>testeinte123</urn:TableFieldValue>
-=======
-                  <urn:TableFieldValue>teste.pdf</urn:TableFieldValue>
-               </urn:TableField>
-               <urn:TableField>
-                  <urn:TableFieldID>guid</urn:TableFieldID>
-                  <urn:TableFieldValue>teste</urn:TableFieldValue>
->>>>>>> 528feb199621fd7ef369f60ca3846b298a723268
                </urn:TableField>
             </urn:TableFieldList>
         </urn:newTableRecord>
