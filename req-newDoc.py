@@ -16,6 +16,8 @@ with open("teste.pdf", "rb") as file:
 # URL da sua API (substitua pela URL correta)
 url = os.getenv("DOMAIN")
 auth = os.getenv("TOKEN_JWT")
+
+print(base64_string)
  
  
 # Headers da requisição (ajuste conforme necessário)
@@ -31,16 +33,16 @@ xml_body = f"""
     <soapenv:Body>
         <urn:newDocument>
             <urn:idcategory>naoIndex</urn:idcategory>
-            <urn:iddocument>recuperacoo-002</urn:iddocument>
-            <urn:title>{file_name}recuperacoo-002</urn:title>
+            <urn:iddocument>cd1d678aeb2c4fe994afb37fa3d4fc17-00123123</urn:iddocument>
+            <urn:title>{file_name}cd1d678aeb2c4fe994afb37fa3d4fc17-00123123</urn:title>
             <urn:dsresume>Documento enviado automaticamente</urn:dsresume>
             <urn:iduser></urn:iduser>
             <urn:attributes>caixa=223223;etiqueta=2232;tpdocumento=23223;numpagina=22322</urn:attributes>
             <urn:fgmodel></urn:fgmodel>
             <urn:file>
                 <urn:item>
-                    <urn:NMFILE>recuperacoo-002.pdf</urn:NMFILE>
-                    <urn:BINFILE>{base64_string}recuperacoo-002lsdfjhgkjdvnistbpibíjbf´vervónv´dnfnbisnrtbkjfsnb</urn:BINFILE>
+                    <urn:NMFILE>cd1d678aeb2c4fe994afb37fa3d4fc17-00123123.pdf</urn:NMFILE>
+                    <urn:BINFILE>{base64_string}cd1d678aeb2c4fe994afb37fa3d4fc17-00123123</urn:BINFILE>
                     <urn:CONTAINER>?</urn:CONTAINER>
                     <urn:ERROR>?</urn:ERROR>
                 </urn:item>
