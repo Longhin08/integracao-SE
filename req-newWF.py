@@ -29,18 +29,13 @@ xml_body = f"""
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:workflow">
    <soapenv:Header/>
    <soapenv:Body>
-      <urn:newAttachment>
-         <!--You may enter the following 8 items in any order-->
-         <urn:WorkflowID>tratamento</urn:WorkflowID>
-         <urn:ActivityID>000853</urn:ActivityID>
-         <urn:FileName>teste</urn:FileName>
-         <urn:FileContent>cid:279685291020</urn:FileContent>
+      <urn:newWorkflow>
+         <!--You may enter the following 3 items in any order-->
+         <urn:ProcessID>tratamento</urn:ProcessID>
+         <urn:WorkflowTitle>0899</urn:WorkflowTitle>
          <!--Optional:-->
-         <urn:UserID></urn:UserID>  
-         <urn:AttachmentID></urn:AttachmentID>
-         <urn:AttachmentName></urn:AttachmentName>
-         <urn:Summary></urn:Summary>
-      </urn:newAttachment>
+         <urn:UserID></urn:UserID>
+      </urn:newWorkflow>
    </soapenv:Body>
 </soapenv:Envelope>
 """
